@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
 
 // =========================================================================
 // 💳 MAGIC CONFIG ZONE: YOUR STRIPE LINK IS LIVE!
@@ -384,4 +385,11 @@ export default function App() {
       )}
     </div>
   );
+}
+
+// 🚀 MOUNT TO ROOT ELEMENT (This compiles standard React components onto your index.html DOM!)
+const container = document.getElementById('root');
+if (container) {
+  const root = createRoot(container);
+  root.render(<App />);
 }
